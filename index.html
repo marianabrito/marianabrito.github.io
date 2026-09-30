@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mariana Brito — Analista de Segurança da Informação</title>
+<meta name="description" content="Analista de segurança da informação: SIEM, Wazuh, Fortinet, resposta a incidentes e automação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f141b; --panel:#151c26; --line:#263243;
+  --fg:#d3dae4; --dim:#8593a6;
+  --prompt:#e9b44c; --accent:#5cc8d7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:15px/1.7 "JetBrains Mono","Fira Code",ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--prompt);outline-offset:3px}
+nav{position:sticky;top:0;z-index:5;background:rgba(15,20,27,.94);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+nav .in{max-width:860px;margin:auto;padding:.8rem 1.25rem;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;align-items:center}
+.prompt{color:var(--prompt);font-weight:600;margin-right:auto}
+nav a{color:var(--dim)} nav a:hover{color:var(--fg);text-decoration:none}
+main{max-width:860px;margin:auto;padding:0 1.25rem 4rem}
+section{padding:3.5rem 0 0}
+.cmd{color:var(--prompt);margin:0 0 .4rem}
+.cmd::before{content:"$ ";color:var(--dim)}
+.out{color:var(--dim);margin:0 0 1.4rem}
+h1{font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.05;margin:.3rem 0 .8rem;font-weight:800;letter-spacing:-.03em}
+h2{font-size:1.15rem;margin:0 0 1.4rem;font-weight:600;color:var(--accent)}
+h2::before{content:"// ";color:var(--dim)}
+.lead{max-width:62ch}
+.cursor{display:inline-block;width:.6em;height:1.1em;background:var(--prompt);vertical-align:-.2em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero .role{color:#f28c28;font-size:1.05rem;font-weight:600;margin:0 0 1.4rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.btn{border:1px solid var(--line);padding:.5rem 1rem;border-radius:4px;color:var(--fg);background:var(--panel)}
+.btn:hover{border-color:var(--accent);text-decoration:none}
+.status{margin-top:2rem;border-left:2px solid var(--prompt);padding-left:1rem}
+.status b{color:#7ad19a;font-weight:600}
+.job{border-left:1px solid var(--line);padding:0 0 2rem 1.4rem;position:relative}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-5px;top:.55rem;width:9px;height:9px;background:var(--bg);border:1px solid var(--accent);border-radius:50%}
+.job h3{margin:0;font-size:1.02rem;font-weight:600}
+.job .meta{color:var(--dim);margin:.1rem 0 .7rem;font-size:.9rem}
+.job .meta em{font-style:normal;color:var(--prompt)}
+ul{margin:0;padding:0;list-style:none}
+.job li{position:relative;padding-left:1.3rem;margin:.35rem 0}
+.job li::before{content:">";position:absolute;left:0;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.4rem 2rem}
+.grid h3{margin:0 0 .5rem;font-size:.95rem;font-weight:600;color:var(--prompt)}
+.tag{display:inline-block;border:1px solid var(--line);background:var(--panel);border-radius:3px;padding:.05rem .6rem;margin:0 .35rem .4rem 0;font-size:.85rem}
+.certs li{padding:.7rem 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.certs li:first-child{border-top:1px dashed var(--line)}
+.certs span{color:var(--dim)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.proj{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:1.1rem 1.2rem}
+.proj h3{margin:0 0 .4rem;font-size:1rem;font-weight:600}
+.proj p{margin:0 0 .8rem;color:var(--dim);font-size:.92rem}
+.proj.empty{border-style:dashed;background:transparent}
+.proj .links a{margin-right:1rem;font-size:.9rem}
+.contact a{display:block;width:fit-content;margin:.3rem 0}
+footer{max-width:860px;margin:0 auto;padding:1.6rem 1.25rem calc(2rem + env(safe-area-inset-bottom,0px));color:var(--dim);border-top:1px solid var(--line);font-size:.85rem}
+@media (max-width:560px){body{font-size:14px}.prompt{width:100%}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav><div class="in">
+  <span class="prompt">mariana@soc:~$</span>
+  <a href="#sobre">Quem sou eu</a>
+  <a href="#experiencia">Experiência</a>
+  <a href="#skills">Skills</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#formacao">Formação</a>
+  <a href="#contato">Contato</a>
+</div></nav>
+
+<main>
+  <header class="hero" style="padding-top:4rem">
+    <p class="cmd">whoami</p>
+    <h1>Mariana Brito<span class="cursor" aria-hidden="true"></span></h1>
+    <p class="role">Analista de Segurança da Informação</p>
+    <p class="lead">Atuo com monitoramento de alertas, análise de logs, resposta a incidentes e automação de detecção. Gerencio o ciclo completo de resposta a incidentes, desde a abertura até a consolidação de lições aprendidas, além de atuar ativamente na gestão de vulnerabilidades.</p>
+    <div class="btns">
+      <a class="btn" href="https://www.linkedin.com/in/marianabritoss" target="_blank" rel="noopener">Meu Linkedin</a>
+      <a class="btn" href="#experiencia">Experiências</a>
+    </div>
+    <div class="status">
+      <p class="cmd" style="margin:0">tail -f status.log</p>
+      <p style="margin:0">Triagem de alertas, correlação de eventos, gestão de incidentes e playbooks: <b>ativo ✓</b></p>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <p class="lead">Sou analista de segurança da informação cursando Sistemas de Informação. Comecei em NOC, monitorando disponibilidade e desempenho de rede, realizando troubleshooting em grandes redes, e me encontrei na area de segurança da informação. Atuo/atuei em firewalls fortinets, proteção de e-mail, SIEM e resposta a incidentes.</p>
+    <p class="lead">Hoje escrevo regras de correlação no FortiAnalyzer e monto playbooks que integram APIs, webhooks e Power Automate para reduzir falsos positivos, eliminando o ruído operacional e automatizando tarefas repetitivas.</p>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiência</h2>
+
+    <article class="job">
+      <h3>Analista de Segurança Jr</h3>
+      <p class="meta">Vectra Consultoria e Serviços · <em>Out 2025 – Atualmente</em></p>
+      <ul>
+        <li><b>Monitoramento proativo:</b> acompanhamento e validação de alertas em ferramentas SIEM, com resposta ágil.</li>
+        <li><b>Resposta a incidentes:</b> análise de logs, redes e endpoints para identificar vetores de ataque, mitigar riscos e evitar reincidência.</li>
+        <li><b>Vulnerabilidades e hardening:</b> avaliação de vulnerabilidades emergentes e apoio às equipes de infraestrutura nas correções.</li>
+        <li><b>Wazuh:</b> configuração, sustentação e troubleshooting de cluster em Linux, com alta disponibilidade e coleta estável; manutenção em produção, FIM, gestão contínua de vulnerabilidades e alertas customizados no Dashboard.</li>
+        <li><b>FortiAnalyzer:</b> gestão, retenção e análise centralizada de logs; regras de detecção para correlacionar eventos.</li>
+        <li><b>Playbooks:</b> integrações do FortiAnalyzer com APIs via webhooks e Power Automate, dados padronizados em JSON, consultas a feeds OSINT de ameaças, menos falsos positivos e mais tempo livre para o N1.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Analista de AntiSpam II</h3>
+      <p class="meta">Inorpel Cybersecurity · <em>Jun 2025 – Set 2025</em></p>
+      <ul>
+        <li>Implementação, configuração e gestão de regras de fluxo no FortiMail para bloqueio preventivo de spam, malware, phishing e ameaças avançadas.</li>
+        <li>Análise de logs e cabeçalhos de e-mail para investigar falsos positivos e tratar incidentes.</li>
+        <li>Microsoft Exchange: políticas de MFA e gestão de tokens de acesso para mitigar contas comprometidas.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Analista de Segurança da Informação Jr</h3>
+      <p class="meta">WorldNet · <em>Nov 2024 – Jun 2025</em></p>
+      <ul>
+        <li>Análise de segurança N1: identificação e mitigação de vulnerabilidades e ameaças.</li>
+        <li>FortiGate: políticas de segurança e controle de acesso à rede; análise de dados em firewalls Fortinet.</li>
+        <li>FortiMail: gestão de e-mail seguro e proteção contra spam e malware.</li>
+        <li>FortiAnalyzer: análise de logs e identificação de padrões suspeitos de tráfego.</li>
+        <li>Elaboração de POPs, treinamento da equipe N1 e resolução de problemas.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <h3>Network Technical Analyst · NOC2</h3>
+      <p class="meta">BBG · <em>Jan 2023 – Dez 2023</em></p>
+      <ul>
+        <li>Monitoramento e gestão da rede, garantindo disponibilidade, confiabilidade, desempenho e segurança.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>skills</h2>
+    <div class="grid">
+      <div><h3>SIEM & SecOps</h3><span class="tag">Wazuh</span><span class="tag">FortiAnalyzer</span><span class="tag">FIM</span><span class="tag">Engenharia de Detecção</span></div>
+      <div><h3>Firewall e e-mail</h3><span class="tag">FortiGate</span><span class="tag">FortiMail</span><span class="tag">Microsoft Exchange</span></div>
+      <div><h3>Identidade</h3><span class="tag">MFA</span><span class="tag">Tokens de acesso</span></div>
+      <div><h3>Automação</h3><span class="tag">Playbooks</span><span class="tag">Webhooks</span><span class="tag">Power Automate</span><span class="tag">JSON</span></div>
+      <div><h3>Threat intel</h3><span class="tag">Análise de Ameaças</span></div>
+      <div><h3>Operação</h3><span class="tag">Resposta a incidentes</span><span class="tag">Hardening</span><span class="tag">Gestão de Vulnerabilidades</span><span class="tag">Mitigação de Riscos</span><span </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2>projetos</h2>
+    <div class="projects">
+      <!-- MODELO: copie este bloco para cada lab novo e cole acima do card "em breve"
+      <article class="proj">
+        <h3>Nome do lab</h3>
+        <p>O que você montou e o que ele demonstra, em uma ou duas frases.</p>
+        <span class="tag">Wazuh</span><span class="tag">FortiGate</span>
+        <div class="links" style="margin-top:.6rem"><a href="https://github.com/SEU-USUARIO/SEU-REPO" target="_blank" rel="noopener">repositório ↗</a></div>
+      </article>
+      -->
+      <article class="proj empty">
+        <h3>Labs em breve</h3>
+        <p>Estou documentando meus laboratórios de detecção, logs e automação. Eles vão aparecer aqui.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <h2>formação e certificações</h2>
+    <ul class="certs">
+      <li>Redes de computadores<span>FG</span></li>
+      <li>Sistemas de Informação (Graduação)<span>cursando</span></li>
+      <li>CompTIA Security+ <span>CompTIA</span></li>
+      <li>FortiAnalyzer Analyst (NS5) <span>Fortinet</span></li>
+      <li>FortiMail Administrator (NS6) <span>Fortinet</span></li>
+    </ul>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2>contato</h2>
+    <p class="cmd">ping mariana</p>
+    <p class="out">Aberta a conexões, em constante evolução e aprimorando competências em SOC, detecção e resposta a incidentes.</p>
+    <!-- Troque pelos seus links reais -->
+        <a href="https://medium.com/@mari-soc-analyst" target="_blank" rel="noopener">Ainda aprimorando habilidades com artigos ↗</a>
+    <a href="https://www.linkedin.com/in/marianabritoss" target="_blank" rel="noopener">linkedin.com/in/marianabritoss ↗</a>
+  </section>
+</main>
+
+<footer>© Feito com muitos logs.</footer>
+</body>
+</html>
